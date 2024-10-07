@@ -24,4 +24,4 @@ jobs:
       with:
         specFilename: tests/exampleSpec.yaml
         format: yaml
-        accessToken: ${{ secrets.GH_PAT }}
+        accessToken: ${{ secrets.GITHUB_TOKEN }}
