@@ -9,15 +9,15 @@
     "test": "jest"
   },
   "dependencies": {
-    "@actions/core": "^1.6.0",
-    "@actions/github": "^5.1.1",
-    "fs": "^0.0.1-security",
-    "js-yaml": "^4.1.0",
-    "lodash": "^4.17.21",
-    "octokit": "^2.0.10"
+    "@actions/core": "^2.0.3",
+    "@actions/github": "^8.0.1",
+    "js-yaml": "^4.1.1",
+    "lodash": "^4.18.1",
+    "octokit": "^5.0.5"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.34.0",
-    "jest": "^29.2.2"
-  }
+    "@vercel/ncc": "^0.38.4",
+    "jest": "^30.3.0"
+  },
+  "packageManager": "npm@11.13.0+sha512.7119a16a0843580d65160977520e3f5710c974f04afd4fad36d9eb97d917ba716a856c35c78c4be6dc64367eeaccfb957ef5ce997ca31e9330b2e936ba2b1b92"
 }

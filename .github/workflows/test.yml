@@ -6,20 +6,32 @@ on:
       - main
       - 'releases/*'
 
+permissions: {}
+
 jobs:
   # unit tests
   units:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-    - uses: actions/checkout@v3
-    - run: npm ci
-    - run: npm test
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      with:
+        fetch-depth: 1
+        persist-credentials: false
+    - run: corepack npm ci --prefer-offline --no-audit --fund=false --progress=false --ignore-scripts
+    - run: corepack npm test
 
   # test action works running from the graph
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      with:
+        fetch-depth: 1
+        persist-credentials: false
     - uses: ./
       with:
         specFilename: tests/exampleSpec.yaml
