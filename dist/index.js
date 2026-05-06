@@ -49520,8 +49520,8 @@ function compareSchemas(description, existingSchema, existingSchemaRef, newSchem
     newSchemaRef = getSchemaReference(newSchema, newSchemaRef.$ref);
   }
 
-  if (existingSchemaRef && existingSchemaRef.type && existingSchemaRef.type === 'object') {
-    if (!newSchemaRef || !newSchemaRef.type || newSchemaRef.type !== 'object') {
+  if (existingSchemaRef && (existingSchemaRef.type === 'object' || existingSchemaRef.properties)) {
+    if (!newSchemaRef || !(newSchemaRef.type === 'object' || newSchemaRef.properties)) {
       detector.detect('schema-type-changed', description);
       return;
     }
